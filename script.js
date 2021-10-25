@@ -29,5 +29,5 @@ window.onload = () => {
 };
 
 colorPalete.addEventListener('click', (e) => {
-  e.target.className = 'selected';
+  e.target.className = 'selected'
 });
