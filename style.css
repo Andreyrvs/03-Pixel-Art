@@ -9,28 +9,35 @@
 
 .color {
   border: 1px solid black;
+  height: 80px;
+  width: 80px;
+
 }
 
 .color:first-child {
   background-color: black;
-  height: 80px;
-  width: 80px;
 }
 
 .color:nth-child(2) {
   background-color: red;
-  height: 80px;
-  width: 80px;
 }
 
 .color:nth-child(3) {
   background-color: blue;
-  height: 80px;
-  width: 80px;
 }
 
 .color:nth-child(4) {
   background-color: green;
+
+}
+
+#pixel-board {
+}
+
+.pixel {
+  border: 1px solid black;
   height: 80px;
   width: 80px;
+  display: inline-block;
+
 }
