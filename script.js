@@ -1,14 +1,19 @@
 // Exercicio 02 ;
-function createPixelGrid() {
-  const catchBoard = document.getElementById('pixel-board');
-  const gridNumber = 25;
-  for (let index = 1; index <= gridNumber; index += 1) {
-    const createItem = document.createElement('div');
-    createItem.className = 'pixel';
-    createItem.style.backgroundColor = 'rgb(255,255,255)';
-    catchBoard.appendChild(createItem);
+const pixelBoard = document.getElementById('pixel-board');
+
+function createGrid() {
+  for (let index = 0; index < 5; index += 1) {
+    const createDiv = document.createElement('div');
+
+    pixelBoard.appendChild(createDiv);
+    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
+      const createSon = document.createElement('div');
+      createSon.className = 'pixel';
+      pixelBoard.appendChild(createSon);
+    }
   }
 }
+
 window.onload = () => {
-  createPixelGrid();
+  createGrid();
 };
