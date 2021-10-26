@@ -21,15 +21,15 @@
 }
 
 .color:nth-child(2) {
-  background-color: rgb(255, 0, 0);
+  background-color: red;
 }
 
 .color:nth-child(3) {
-  background-color: rgb(0, 0, 255);
+  background-color: blue;
 }
 
 .color:nth-child(4) {
-  background-color: rgb(0, 255, 0);
+  background-color: lime;
 }
 
 #pixel-board {
@@ -43,7 +43,7 @@
   height: 40px;
   display: inline-block;
   margin: 2px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .add-btn {
