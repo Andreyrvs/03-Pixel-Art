@@ -2,20 +2,14 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalete = document.getElementById('color-palette');
 
-function addClassColor() {
-  for (let index = 1; index < 5; index += 1) {
-    const createDivColor = document.createElement('div');
-    createDivColor.className = 'color';
-    colorPalete.appendChild(createDivColor);
-  }
-}
-
+let gridNumber = 5;
+// cria o grid
 function createGrid() {
-  for (let index = 0; index < 5; index += 1) {
+  for (let index = 0; index < gridNumber; index += 1) {
     const createDiv = document.createElement('div');
     createDiv.className = 'linha';
     pixelBoard.appendChild(createDiv);
-    for (let secondIndex = 0; secondIndex < 5; secondIndex += 1) {
+    for (let secondIndex = 0; secondIndex < gridNumber; secondIndex += 1) {
       const createSon = document.createElement('div');
       createSon.className = 'pixel';
       pixelBoard.appendChild(createSon);
@@ -23,11 +17,16 @@ function createGrid() {
   }
 }
 
-window.onload = () => {
-  createGrid();
-  addClassColor();
-};
+// Requisito 06
 
 colorPalete.addEventListener('click', (e) => {
-  e.target.className = 'selected'
+  if (e.target.id !== 'color-palette') {
+    document.querySelector('.selected').classList.remove('selected');
+
+    e.target.classList.add('selected');
+  }
 });
+
+window.onload = () => {
+  createGrid();
+};
