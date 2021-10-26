@@ -16,7 +16,7 @@ function createGrid() {
     }
   }
 }
-
+createGrid();
 //  seleciona a cor ao clicar na palette.
 
 function catchColor() {
@@ -53,22 +53,14 @@ function creatButton() {
   creatBnt.innerText = 'Limpar';
   catchBtn.appendChild(creatBnt);
 }
+creatButton();
+// Reseta a cor do Grid
+const pixels = document.querySelectorAll('.pixel');
 
-const pixel = document.querySelector('.pixel-board');
-const colorPtt = document.querySelector('.color');
-const catchButton = document.getElementById('#clear-board');
+const catchButton = document.querySelector('#clear-board');
 
-for (let index = 0; index < pixel; index += 1) {
-  pixel[index].addEventListener('click', (e) => {
-    for (let secondIndex = 0; secondIndex < pixel; secondIndex += 1) {
-      if (pixel[secondIndex] !== colorPtt) {
-        e.target.style.backgroundColor = 'white';
-      }
-    }
-  });
-}
-// Quando inicia a Pagina
-window.onload = () => {
-  createGrid();
-  creatButton();
-};
+catchButton.addEventListener('click', () => {
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+});
