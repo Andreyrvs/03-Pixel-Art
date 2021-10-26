@@ -2,7 +2,7 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colorPalete = document.getElementById('color-palette');
 
-let gridNumber = 5;
+const gridNumber = 5;
 // cria o grid
 function createGrid() {
   for (let index = 0; index < gridNumber; index += 1) {
@@ -24,7 +24,7 @@ function catchColor() {
   const theCSSprop = window
     .getComputedStyle(catchClassActiveColor, null)
     .getPropertyValue('background-color');
-  console.log(theCSSprop);
+  // console.log(theCSSprop);
   return theCSSprop;
 }
 
@@ -38,12 +38,67 @@ colorPalete.addEventListener('click', (e) => {
   }
 });
 
+// troca a cor dos pixel no Grid
 pixelBoard.addEventListener('click', (e) => {
   if (e.target.id !== 'pixel-board') {
     e.target.style.backgroundColor = catchColor();
-    // console.log(test);
   }
 });
+
+// cria batao
+function creatButton() {
+  const catchBtn = document.querySelector('.add-btn');
+  const creatBnt = document.createElement('button');
+  creatBnt.id = 'clear-board';
+  creatBnt.innerText = 'Limpar';
+  catchBtn.appendChild(creatBnt);
+}
+
+function pegaBgColor() {
+  const catchClassColor = document.querySelector('.color');
+  const theCSSpropBG = window
+    .getComputedStyle(catchClassColor, null)
+    .getPropertyValue('background-color');
+  console.log(theCSSpropBG);
+  return theCSSpropBG;
+}
+pegaBgColor();
+
+function resetColor() {
+  const savePosition = document.querySelector('.pixel');
+
+  for (let index = 0; index < savePosition; index += 1) {
+    savePosition.addEventListener('click', (e) => {
+      if (savePosition[index] !== pegaBgColor) {
+        e.target.style.backgroundColor = 'white';
+      }
+    });
+  }
+  return savePosition;
+}
+resetColor();
+
+// const teste = document.querySelector('.color');
+// let Testy = document.querySelector('.pixel');
+
+// console.log('teste');
+// teste.addEventListener('click', (e) => {
+//   for (let index = 0; index < Testy.length; index += 1) {
+//     // const theCSSprop = window
+//     // .getComputedStyle(Testy, null)
+//     // .getPropertyValue('background-color');
+//     // console.log(theCSSprop);
+
+//   if (Testy[index] === teste) {
+
+//       e.target.style.backgroundColor = 'white';
+
+//   }
+//   }
+// });
+
+// Quando inicia a Pagina
 window.onload = () => {
   createGrid();
+  creatButton();
 };

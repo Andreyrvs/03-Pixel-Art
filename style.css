@@ -46,5 +46,7 @@
   background-color: rgb(255, 255, 255);
 }
 
-.linha {
+.add-btn {
+  text-align: center;
+  margin-bottom: 4px;
 }
