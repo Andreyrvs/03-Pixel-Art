@@ -45,7 +45,7 @@ pixelBoard.addEventListener('click', (e) => {
   }
 });
 
-// cria batao
+// cria botao
 function creatButton() {
   const catchBtn = document.querySelector('.add-btn');
   const creatBnt = document.createElement('button');
@@ -54,6 +54,10 @@ function creatButton() {
   catchBtn.appendChild(creatBnt);
 }
 creatButton();
+
+/**
+ * A pessoa estudante Rolwane - Turma 17 me ajudou a fazer essa parte, estavamos em uma chamado do slack
+ */
 // Reseta a cor do Grid
 const pixels = document.querySelectorAll('.pixel');
 
